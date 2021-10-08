@@ -1,5 +1,5 @@
 pipeline {
-  agent node {label 'master'}
+  agent none
   environment {
     DOCKER_IMAGE = "quangtm199/flask-docker"
   }
