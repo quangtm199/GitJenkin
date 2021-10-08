@@ -1,8 +1,10 @@
 pipeline {
-  agent none
+  agent node {label 'master'}
   environment {
     DOCKER_IMAGE = "quangtm199/flask-docker"
   }
+  
+  
     stages {
     stage("Test") {
       steps {
@@ -12,4 +14,15 @@ pipeline {
     }
   
   
-  }}
+  }
+  
+  post {
+    success {
+      echo "SUCCESSFUL"
+    }
+    failure {
+      echo "FAILED"
+    }
+  }
+  
+  }
